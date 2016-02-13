@@ -702,7 +702,7 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="lightshow" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
+                    <view key="view" id="m2S-Jp-Qdl" customClass="View" customModule="lightshow" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="734" height="689"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -764,9 +764,6 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Idy-2f-nYh" userLabel="Overlay View" customClass="WaveformOverlayView" customModule="lightshow" customModuleProvider="target">
-                                <rect key="frame" x="27" y="305" width="660" height="250"/>
-                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="rxo-jY-lmC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="17k-fT-Jdp"/>
@@ -784,7 +781,6 @@
                     <connections>
                         <outlet property="scrollView" destination="doV-X3-MhO" id="63b-LW-Zo3"/>
                         <outlet property="timeCodeLabel" destination="YRe-lf-XBz" id="K1l-Qg-5rg"/>
-                        <outlet property="waveformOverlayView" destination="Idy-2f-nYh" id="N7s-lI-huq"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

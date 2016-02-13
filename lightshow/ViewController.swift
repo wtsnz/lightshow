@@ -11,6 +11,12 @@ import SnapKit
 import EZAudio
 import LIFXKit
 
+class View: NSView {
+    
+    
+    
+}
+
 class ViewController: NSViewController {
     
     @IBOutlet weak var scrollView: NSScrollView!
@@ -33,54 +39,63 @@ class ViewController: NSViewController {
         return waveformOverlayView
     }()
     
+    override var acceptsFirstResponder: Bool {
+        return true
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
-//        self.audioPlotView.plotType = EZPlotType.Buffer
-//        self.audioPlotView.shouldFill = true
-//        self.audioPlotView.shouldMirror = true
-
-
-
-
+        NSEvent.addLocalMonitorForEventsMatchingMask(.KeyDownMask) { (aEvent) -> NSEvent? in
+            self.keyDown(aEvent)
+            return aEvent
+        }
+        
         self.waveformOverlayView.delegate = self
         
         LFXClient.sharedClient().localNetworkContext.addNetworkContextObserver(self)
         LFXClient.sharedClient().localNetworkContext.allLightsCollection.addLightCollectionObserver(self)
         
-//        self.scrollView.contentView.frame = CGRectMake(0, 0, 2000, 200)
-//        self.scrollView.contentView.addSubview(self.audioPlotView)
-//        self.scrollView.contentView.addSubview(self.audioPlotView)
+
         self.scrollView.documentView = self.audioPlotView
 
         let url = NSBundle.mainBundle().URLForResource("magnets", withExtension: "mp3")
         self.openFileWithFilePathURL(url!)
         
-//        self.scrollView.contentView.addSubview(self.audioPlotView)
-        
-//        self.audioPlotView.setContentCompressionResistancePriority(1000, forOrientation: .Horizontal)
-//        self.audioPlotView.snp_remakeConstraints { (make) -> Void in
-//            make.top.equalTo(self.scrollView.contentView)
-////            make.height.equalTo(self.scrollView.contentView)
-//            make.width.equalTo(4000)
-////            make.left.equalTo(self.scrollView.contentView)
-////            make.right.equalTo(self.scrollView.contentView)
+//        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+//        self.scrollView.addConstraint(NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 20))
+//        
+//        self.scrollView.addConstraint(NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: 20))
+//        
+//        self.scrollView.addConstraint(NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 20))
+//        
+//        self.scrollView.addConstraint(NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 20))
+//        }
+//        self.scrollView.snp_makeConstraints { (make) -> Void in
+//            make.leading.equalTo(self.view)
+//            make.trailing.equalTo(self.view)
+//            make.top.equalTo(self.view).offset(100)
+//            make.bottom.equalTo(self.view)
 //        }
         
-
-        
-      
-        
     }
-
+    
     override var representedObject: AnyObject? {
         didSet {
         // Update the view, if already loaded.
         }
     }
 
+    override func keyDown(theEvent: NSEvent) {
+//        super.keyDown(theEvent)
+        
+        NSLog("\(theEvent.keyCode)")
+        
+        if theEvent.keyCode == 49 {
+             self.playAction(self)
+        }
+    }
     
     @IBAction func playAction(sender: AnyObject) {
         
@@ -158,7 +173,7 @@ class ViewController: NSViewController {
         
         var bounds = self.audioPlotView.bounds
         if let audioFile = self.audioFile {
-            bounds.size.width = CGFloat(audioFile.duration * 30)
+            bounds.size.width = CGFloat(audioFile.duration * 60)
         }
         bounds.size.height = self.scrollView.contentView.frame.height
         self.audioPlotView.frame = bounds
@@ -178,7 +193,9 @@ extension ViewController: EZAudioPlayerDelegate {
         
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             self.waveformOverlayView.setCurrentPosition(framePosition)
-            self.timeCodeLabel.stringValue = audioPlayer.formattedCurrentTime
+            self.timeCodeLabel.stringValue = "\(audioPlayer.formattedCurrentTime) \(framePosition)"
+            let colour = colorForFrame(framePosition)
+            LFXClient.sharedClient().localNetworkContext.allLightsCollection.setColor(colour)
         }
         
     }
@@ -188,10 +205,11 @@ extension ViewController: EZAudioPlayerDelegate {
 extension ViewController: WaveformOverlayViewDelegate {
     
     func waveformOverlayViewDidUpdatePlaybackPosition(waveformOverlayView: WaveformOverlayView, position: Int64) {
+
         self.audioPlayer?.seekToFrame(position)
         
         
-        setLightsToRandomColour()
+//        setLightsToRandomColour()
         
     }
     
@@ -217,5 +235,28 @@ func setLightsToRandomColour() {
     let colour = LFXHSBKColor(hue: CGFloat(drand48()) * 360, saturation: CGFloat((drand48()*100)/100.0), brightness: CGFloat((drand48()*100)/100.0), kelvin: 3000)
     
     LFXClient.sharedClient().localNetworkContext.allLightsCollection.setColor(colour)
+}
+
+
+func colorForFrame(frame: Int64) -> LFXHSBKColor {
+    
+    if frame < 500713 {
+        return LFXHSBKColor(hue: 120, saturation: 1, brightness: 0.2, kelvin: 3000)
+    } else if frame < 513070 {
+        return LFXHSBKColor(hue: 180, saturation: 1, brightness: 1.0, kelvin: 3000)
+    } else if frame < 531399 {
+        return LFXHSBKColor(hue: 120, saturation: 1, brightness: 0.2, kelvin: 3000)
+    } else if frame < 539013 {
+        return LFXHSBKColor(hue: 180, saturation: 1, brightness: 1.0, kelvin: 3000)
+    } else if frame < 559013 {
+        return LFXHSBKColor(hue: 120, saturation: 1, brightness: 0.2, kelvin: 3000)
+    } else if frame < 567546 {
+        return LFXHSBKColor(hue: 180, saturation: 1, brightness: 1.0, kelvin: 3000)
+    } else if frame < 575177 {
+        return LFXHSBKColor(hue: 120, saturation: 1, brightness: 0.2, kelvin: 3000)
+    } else {
+        return LFXHSBKColor(hue: 120, saturation: 1, brightness: 0.0, kelvin: 3000)
+    }
+    //539955
 }
 
