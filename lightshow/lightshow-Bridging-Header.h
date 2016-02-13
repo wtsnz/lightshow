@@ -9,6 +9,6 @@
 #ifndef lightshow_Bridging_Header_h
 #define lightshow_Bridging_Header_h
 
-#import <EZAudio.h>
+//#import "EZAudio.h"
 
 #endif /* lightshow_Bridging_Header_h */

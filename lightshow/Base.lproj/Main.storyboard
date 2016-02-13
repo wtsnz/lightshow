@@ -674,10 +674,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="700" height="359"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="fN8-xH-qKp" customClass="EZAudioPlotGL">
-                                <rect key="frame" x="20" y="215" width="660" height="96"/>
+                            <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fN8-xH-qKp" customClass="EZAudioPlotGL">
+                                <rect key="frame" x="20" y="61" width="660" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="96" id="1pf-Vh-yj7"/>
+                                    <constraint firstAttribute="height" constant="250" id="1pf-Vh-yj7"/>
                                 </constraints>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rxo-jY-lmC">
@@ -700,14 +700,6 @@
                                     <action selector="playAction:" target="XfG-lQ-9wD" id="Xf4-RW-LM8"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OH5-3y-gAq">
-                                <rect key="frame" x="645" y="330" width="37" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="XnP-HJ-aRO">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQu-oc-dWF">
                                 <rect key="frame" x="156" y="319" width="73" height="32"/>
                                 <buttonCell key="cell" type="push" title="Open" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lPo-8b-tRF">
@@ -718,23 +710,37 @@
                                     <action selector="openFileAction:" target="XfG-lQ-9wD" id="miM-yK-sLo"/>
                                 </connections>
                             </button>
+                            <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Idy-2f-nYh" userLabel="Overlay View" customClass="WaveformOverlayView" customModule="lightshow" customModuleProvider="target">
+                                <rect key="frame" x="20" y="61" width="660" height="250"/>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YRe-lf-XBz">
+                                <rect key="frame" x="481" y="330" width="201" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Y1X-dS-OQ9">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="fN8-xH-qKp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="14t-Ch-k5a"/>
                             <constraint firstItem="rxo-jY-lmC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="17k-fT-Jdp"/>
-                            <constraint firstItem="fN8-xH-qKp" firstAttribute="top" secondItem="OH5-3y-gAq" secondAttribute="bottom" constant="19" id="5Th-SI-faR"/>
                             <constraint firstItem="GQu-oc-dWF" firstAttribute="leading" secondItem="rhc-ee-nQZ" secondAttribute="trailing" constant="12" id="Fya-gC-SNR"/>
                             <constraint firstItem="rhc-ee-nQZ" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="GIA-wt-W4D"/>
+                            <constraint firstItem="Idy-2f-nYh" firstAttribute="height" secondItem="fN8-xH-qKp" secondAttribute="height" id="Gww-jB-FfS"/>
+                            <constraint firstItem="Idy-2f-nYh" firstAttribute="centerY" secondItem="fN8-xH-qKp" secondAttribute="centerY" id="I6d-j1-lDs"/>
                             <constraint firstItem="GQu-oc-dWF" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="K0r-Ys-yFE"/>
                             <constraint firstAttribute="trailing" secondItem="fN8-xH-qKp" secondAttribute="trailing" constant="20" id="KNh-9p-dwD"/>
                             <constraint firstItem="rxo-jY-lmC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="b2N-ja-Ihd"/>
-                            <constraint firstItem="OH5-3y-gAq" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="oE4-vA-euh"/>
+                            <constraint firstItem="Idy-2f-nYh" firstAttribute="centerX" secondItem="fN8-xH-qKp" secondAttribute="centerX" id="oHE-w3-t9g"/>
                             <constraint firstItem="rhc-ee-nQZ" firstAttribute="leading" secondItem="rxo-jY-lmC" secondAttribute="trailing" constant="14" id="tM3-Kc-SIW"/>
-                            <constraint firstAttribute="trailing" secondItem="OH5-3y-gAq" secondAttribute="trailing" constant="20" id="ylp-ym-RDP"/>
+                            <constraint firstItem="Idy-2f-nYh" firstAttribute="width" secondItem="fN8-xH-qKp" secondAttribute="width" id="zI2-7D-QlB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="audioPlotView" destination="fN8-xH-qKp" id="CbX-fa-afw"/>
+                        <outlet property="timeCodeLabel" destination="YRe-lf-XBz" id="K1l-Qg-5rg"/>
+                        <outlet property="waveformOverlayView" destination="Idy-2f-nYh" id="N7s-lI-huq"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F946A831F565839E75F9576 /* libPods-lightshow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE97E9AF72C0F8280946472B /* libPods-lightshow.a */; };
+		A06686C12EE3D9A7D202C3D7 /* Pods_lightshow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDABB0CA8D986FC163EAA39A /* Pods_lightshow.framework */; };
 		BE815B2E1C6EAE7C00AD9128 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815B2D1C6EAE7C00AD9128 /* AppDelegate.swift */; };
 		BE815B301C6EAE7C00AD9128 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815B2F1C6EAE7C00AD9128 /* ViewController.swift */; };
 		BE815B321C6EAE7C00AD9128 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE815B311C6EAE7C00AD9128 /* Assets.xcassets */; };
@@ -15,6 +15,7 @@
 		BE815B401C6EAE7D00AD9128 /* lightshowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815B3F1C6EAE7D00AD9128 /* lightshowTests.swift */; };
 		BE815B4B1C6EAE7D00AD9128 /* lightshowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815B4A1C6EAE7D00AD9128 /* lightshowUITests.swift */; };
 		BE815B651C6EB51E00AD9128 /* magnets.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE815B641C6EB51E00AD9128 /* magnets.mp3 */; };
+		BE8EED181C6ED67B005E3092 /* WaveformOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8EED171C6ED67B005E3092 /* WaveformOverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,8 @@
 		BE815B4C1C6EAE7D00AD9128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE815B631C6EB4C000AD9128 /* lightshow-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "lightshow-Bridging-Header.h"; sourceTree = "<group>"; };
 		BE815B641C6EB51E00AD9128 /* magnets.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = magnets.mp3; sourceTree = "<group>"; };
-		BE97E9AF72C0F8280946472B /* libPods-lightshow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lightshow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE8EED171C6ED67B005E3092 /* WaveformOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformOverlayView.swift; sourceTree = "<group>"; };
+		EDABB0CA8D986FC163EAA39A /* Pods_lightshow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lightshow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF148DAD9D0A64C3D2B718CA /* Pods-lightshow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lightshow.release.xcconfig"; path = "Pods/Target Support Files/Pods-lightshow/Pods-lightshow.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F946A831F565839E75F9576 /* libPods-lightshow.a in Frameworks */,
+				A06686C12EE3D9A7D202C3D7 /* Pods_lightshow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +114,7 @@
 				BE815B331C6EAE7C00AD9128 /* Main.storyboard */,
 				BE815B361C6EAE7C00AD9128 /* Info.plist */,
 				BE815B631C6EB4C000AD9128 /* lightshow-Bridging-Header.h */,
+				BE8EED171C6ED67B005E3092 /* WaveformOverlayView.swift */,
 			);
 			path = lightshow;
 			sourceTree = "<group>";
@@ -137,7 +140,7 @@
 		CE98915AD0109656E9D654F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BE97E9AF72C0F8280946472B /* libPods-lightshow.a */,
+				EDABB0CA8D986FC163EAA39A /* Pods_lightshow.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			files = (
 				BE815B301C6EAE7C00AD9128 /* ViewController.swift in Sources */,
 				BE815B2E1C6EAE7C00AD9128 /* AppDelegate.swift in Sources */,
+				BE8EED181C6ED67B005E3092 /* WaveformOverlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

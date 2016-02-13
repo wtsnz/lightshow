@@ -1,11 +1,12 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '8.0'
+# platform :osx
 # Uncomment this line if you're using Swift
-# use_frameworks!
+use_frameworks!
 
 target 'lightshow' do
    pod 'LIFXKit', '~> 0.6.1'
    pod 'EZAudio', '~> 1.1.4'
+   pod 'SnapKit', '~> 0.19'
 end
 
 target 'lightshowTests' do

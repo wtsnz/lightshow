@@ -7,33 +7,33 @@
 //
 
 import Cocoa
+import SnapKit
+import EZAudio
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var timeCodeLabel: NSTextField!
     var audioPlayer: EZAudioPlayer? = nil
     var audioFile: EZAudioFile? = nil
     
     @IBOutlet weak var audioPlotView: EZAudioPlotGL!
+    
+    @IBOutlet weak var waveformOverlayView: WaveformOverlayView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-//        self.audioPlotView.backgroundColor = NSColor.blackColor().colorWithAlphaComponent(0.1)
         self.audioPlotView.plotType = EZPlotType.Buffer
         self.audioPlotView.shouldFill = true
         self.audioPlotView.shouldMirror = true
-//        self.audioPlotView.shouldOptimizeForRealtimePlot = false
-        
-//        self.audioPlot.waveformLayer.shadowOffset = CGSizeMake(0.0, -1.0);
-//        self.audioPlot.waveformLayer.shadowRadius = 0.0;
-//        self.audioPlot.waveformLayer.shadowColor = [NSColor colorWithCalibratedRed: 0.069 green: 0.543 blue: 0.575 alpha: 1].CGColor;
-//        self.audioPlot.waveformLayer.shadowOpacity = 1.0;
-        
+
         let url = NSBundle.mainBundle().URLForResource("magnets", withExtension: "mp3")
         self.openFileWithFilePathURL(url!)
 
+
+        self.waveformOverlayView.delegate = self
         
     }
 
@@ -87,6 +87,11 @@ class ViewController: NSViewController {
     
     func openFileWithFilePathURL(filePathURL: NSURL) {
         self.audioFile = EZAudioFile(URL: filePathURL, delegate: self)
+        
+        if let audioFile = self.audioFile {
+            self.waveformOverlayView.totalFrames = audioFile.totalFrames
+        }
+        
         self.audioPlayer = EZAudioPlayer(audioFile: self.audioFile!, delegate: self)
         self.audioFile?.getWaveformDataWithNumberOfPoints(4096, completion: { (test: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, length: Int32) -> Void in
             
@@ -95,8 +100,6 @@ class ViewController: NSViewController {
         })
     }
     
-    
-
 }
 
 extension ViewController: EZAudioFileDelegate {
@@ -106,7 +109,17 @@ extension ViewController: EZAudioFileDelegate {
 extension ViewController: EZAudioPlayerDelegate {
     
     func audioPlayer(audioPlayer: EZAudioPlayer!, updatedPosition framePosition: Int64, inAudioFile audioFile: EZAudioFile!) {
-        print("updated position \(framePosition)")
+//        print("updated position \(framePosition)")
+        self.waveformOverlayView.setCurrentPosition(framePosition)
+        self.timeCodeLabel.stringValue = audioPlayer.formattedCurrentTime
+    }
+    
+}
+
+extension ViewController: WaveformOverlayViewDelegate {
+    
+    func waveformOverlayViewDidUpdatePlaybackPosition(waveformOverlayView: WaveformOverlayView, position: Int64) {
+        self.audioPlayer?.seekToFrame(position)
     }
     
 }

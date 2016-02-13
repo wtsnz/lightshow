@@ -6,15 +6,18 @@ PODS:
     - EZAudio/Core
     - TPCircularBuffer (= 1.1)
   - LIFXKit (0.6.1)
+  - SnapKit (0.19.1)
   - TPCircularBuffer (1.1)
 
 DEPENDENCIES:
   - EZAudio (~> 1.1.4)
   - LIFXKit (~> 0.6.1)
+  - SnapKit (~> 0.19)
 
 SPEC CHECKSUMS:
   EZAudio: 3b1cb4b6d7ebca68f0c2478576d75940aad4aa99
   LIFXKit: 81032f51813a4e9aea0f7da221b7950b95181022
+  SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
 COCOAPODS: 0.39.0
