@@ -15,7 +15,6 @@ protocol WaveformOverlayViewDelegate {
 
 class WaveformOverlayView: NSView {
     
-    
     var delegate: WaveformOverlayViewDelegate? = nil
     
     var totalFrames: Int64 = 0
@@ -25,9 +24,15 @@ class WaveformOverlayView: NSView {
         indicatorLayer.backgroundColor = NSColor.blackColor().CGColor
         return indicatorLayer
     }()
-    
+        
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        self.wantsLayer = true
+        self.layer?.addSublayer(self.indicatorLayer)
+    }
+    
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
         self.wantsLayer = true
         self.layer?.addSublayer(self.indicatorLayer)
     }
@@ -49,10 +54,20 @@ class WaveformOverlayView: NSView {
             return
         }
         
-        let x = Int(CGFloat(self.bounds.width / CGFloat(self.totalFrames)) * CGFloat(position))
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            self.indicatorLayer.frame = CGRectMake(CGFloat(x), 0, 1, self.bounds.height)
-        }
+        let x = CGFloat(Int(CGFloat(self.bounds.width / CGFloat(self.totalFrames)) * CGFloat(position)))
+        
+//        if x != self.indicatorLayer.frame.origin.x {
+//            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+//                NSLog("x: \(x)")
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+                self.indicatorLayer.frame = CGRectMake(CGFloat(x), 0, 1, self.bounds.height)
+        CATransaction.commit()
+
+//            }
+//        }
+        
+        
     }
     
 }
