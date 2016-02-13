@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F946A831F565839E75F9576 /* libPods-lightshow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE97E9AF72C0F8280946472B /* libPods-lightshow.a */; };
 		BE815B2E1C6EAE7C00AD9128 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815B2D1C6EAE7C00AD9128 /* AppDelegate.swift */; };
 		BE815B301C6EAE7C00AD9128 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815B2F1C6EAE7C00AD9128 /* ViewController.swift */; };
 		BE815B321C6EAE7C00AD9128 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE815B311C6EAE7C00AD9128 /* Assets.xcassets */; };
 		BE815B351C6EAE7C00AD9128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE815B331C6EAE7C00AD9128 /* Main.storyboard */; };
 		BE815B401C6EAE7D00AD9128 /* lightshowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815B3F1C6EAE7D00AD9128 /* lightshowTests.swift */; };
 		BE815B4B1C6EAE7D00AD9128 /* lightshowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE815B4A1C6EAE7D00AD9128 /* lightshowUITests.swift */; };
+		BE815B651C6EB51E00AD9128 /* magnets.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE815B641C6EB51E00AD9128 /* magnets.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		799229B5D0A9FAAB54E0F07A /* Pods-lightshow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lightshow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lightshow/Pods-lightshow.debug.xcconfig"; sourceTree = "<group>"; };
 		BE815B2A1C6EAE7C00AD9128 /* lightshow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lightshow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE815B2D1C6EAE7C00AD9128 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE815B2F1C6EAE7C00AD9128 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +48,10 @@
 		BE815B461C6EAE7D00AD9128 /* lightshowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lightshowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE815B4A1C6EAE7D00AD9128 /* lightshowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lightshowUITests.swift; sourceTree = "<group>"; };
 		BE815B4C1C6EAE7D00AD9128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE815B631C6EB4C000AD9128 /* lightshow-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "lightshow-Bridging-Header.h"; sourceTree = "<group>"; };
+		BE815B641C6EB51E00AD9128 /* magnets.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = magnets.mp3; sourceTree = "<group>"; };
+		BE97E9AF72C0F8280946472B /* libPods-lightshow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lightshow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF148DAD9D0A64C3D2B718CA /* Pods-lightshow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lightshow.release.xcconfig"; path = "Pods/Target Support Files/Pods-lightshow/Pods-lightshow.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F946A831F565839E75F9576 /* libPods-lightshow.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +87,8 @@
 				BE815B3E1C6EAE7D00AD9128 /* lightshowTests */,
 				BE815B491C6EAE7D00AD9128 /* lightshowUITests */,
 				BE815B2B1C6EAE7C00AD9128 /* Products */,
+				EA68345B2B074F1EC801AAAF /* Pods */,
+				CE98915AD0109656E9D654F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,11 +105,13 @@
 		BE815B2C1C6EAE7C00AD9128 /* lightshow */ = {
 			isa = PBXGroup;
 			children = (
+				BE815B641C6EB51E00AD9128 /* magnets.mp3 */,
 				BE815B2D1C6EAE7C00AD9128 /* AppDelegate.swift */,
 				BE815B2F1C6EAE7C00AD9128 /* ViewController.swift */,
 				BE815B311C6EAE7C00AD9128 /* Assets.xcassets */,
 				BE815B331C6EAE7C00AD9128 /* Main.storyboard */,
 				BE815B361C6EAE7C00AD9128 /* Info.plist */,
+				BE815B631C6EB4C000AD9128 /* lightshow-Bridging-Header.h */,
 			);
 			path = lightshow;
 			sourceTree = "<group>";
@@ -122,6 +134,23 @@
 			path = lightshowUITests;
 			sourceTree = "<group>";
 		};
+		CE98915AD0109656E9D654F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE97E9AF72C0F8280946472B /* libPods-lightshow.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA68345B2B074F1EC801AAAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				799229B5D0A9FAAB54E0F07A /* Pods-lightshow.debug.xcconfig */,
+				EF148DAD9D0A64C3D2B718CA /* Pods-lightshow.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE815B4F1C6EAE7D00AD9128 /* Build configuration list for PBXNativeTarget "lightshow" */;
 			buildPhases = (
+				2EF72C87602ED13C20D5575B /* Check Pods Manifest.lock */,
 				BE815B261C6EAE7C00AD9128 /* Sources */,
 				BE815B271C6EAE7C00AD9128 /* Frameworks */,
 				BE815B281C6EAE7C00AD9128 /* Resources */,
+				7C6B41BCDFE3EF1ACAC588F0 /* Embed Pods Frameworks */,
+				88F4A3CEFAF19F542B2BAF98 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE815B321C6EAE7C00AD9128 /* Assets.xcassets in Resources */,
+				BE815B651C6EB51E00AD9128 /* magnets.mp3 in Resources */,
 				BE815B351C6EAE7C00AD9128 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +279,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2EF72C87602ED13C20D5575B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7C6B41BCDFE3EF1ACAC588F0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lightshow/Pods-lightshow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88F4A3CEFAF19F542B2BAF98 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lightshow/Pods-lightshow-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE815B261C6EAE7C00AD9128 /* Sources */ = {
@@ -382,6 +463,7 @@
 		};
 		BE815B501C6EAE7D00AD9128 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 799229B5D0A9FAAB54E0F07A /* Pods-lightshow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -389,11 +471,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.townsend.lightshow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "lightshow/lightshow-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		BE815B511C6EAE7D00AD9128 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF148DAD9D0A64C3D2B718CA /* Pods-lightshow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -401,6 +485,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.townsend.lightshow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "lightshow/lightshow-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -475,6 +560,7 @@
 				BE815B511C6EAE7D00AD9128 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE815B521C6EAE7D00AD9128 /* Build configuration list for PBXNativeTarget "lightshowTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +569,7 @@
 				BE815B541C6EAE7D00AD9128 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE815B551C6EAE7D00AD9128 /* Build configuration list for PBXNativeTarget "lightshowUITests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +578,7 @@
 				BE815B571C6EAE7D00AD9128 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
