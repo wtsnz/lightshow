@@ -726,8 +726,8 @@
                                     <action selector="playAction:" target="XfG-lQ-9wD" id="Xf4-RW-LM8"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQu-oc-dWF">
-                                <rect key="frame" x="156" y="649" width="73" height="32"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GQu-oc-dWF">
+                                <rect key="frame" x="152" y="649" width="73" height="32"/>
                                 <buttonCell key="cell" type="push" title="Open" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lPo-8b-tRF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -736,8 +736,8 @@
                                     <action selector="openFileAction:" target="XfG-lQ-9wD" id="miM-yK-sLo"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YRe-lf-XBz">
-                                <rect key="frame" x="481" y="660" width="201" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YRe-lf-XBz">
+                                <rect key="frame" x="679" y="660" width="37" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Y1X-dS-OQ9">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -751,7 +751,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4zz-0D-TPP">
-                                            <rect key="frame" x="0.0" y="523" width="181" height="94"/>
+                                            <rect key="frame" x="141" y="65" width="115" height="109"/>
                                         </view>
                                     </subviews>
                                 </clipView>
@@ -764,16 +764,42 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lea-V8-oD8">
+                                <rect key="frame" x="225" y="649" width="110" height="32"/>
+                                <buttonCell key="cell" type="push" title="Toggle Line" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tXA-oI-7IB">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="toggleLineAction:" target="XfG-lQ-9wD" id="9hq-YK-Gcq"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5VD-Mi-Pln">
+                                <rect key="frame" x="335" y="649" width="109" height="32"/>
+                                <buttonCell key="cell" type="push" title="Delete Last" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aa1-O5-NSk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="deleteLastLineAction:" target="XfG-lQ-9wD" id="j1u-1a-t62"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="rxo-jY-lmC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="17k-fT-Jdp"/>
+                            <constraint firstItem="YRe-lf-XBz" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="Aow-FX-EPQ"/>
                             <constraint firstItem="GQu-oc-dWF" firstAttribute="leading" secondItem="rhc-ee-nQZ" secondAttribute="trailing" constant="12" id="Fya-gC-SNR"/>
                             <constraint firstItem="rhc-ee-nQZ" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="GIA-wt-W4D"/>
                             <constraint firstItem="doV-X3-MhO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="JFc-kS-aic"/>
                             <constraint firstItem="GQu-oc-dWF" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="K0r-Ys-yFE"/>
+                            <constraint firstItem="Lea-V8-oD8" firstAttribute="leading" secondItem="GQu-oc-dWF" secondAttribute="trailing" constant="12" id="Nep-m9-dh7"/>
+                            <constraint firstAttribute="trailing" secondItem="YRe-lf-XBz" secondAttribute="trailing" constant="20" id="QhW-PP-q5C"/>
                             <constraint firstAttribute="bottom" secondItem="doV-X3-MhO" secondAttribute="bottom" constant="20" id="QvN-wJ-n9A"/>
                             <constraint firstItem="doV-X3-MhO" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="Ttm-sW-PNU"/>
                             <constraint firstItem="rxo-jY-lmC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="b2N-ja-Ihd"/>
+                            <constraint firstItem="5VD-Mi-Pln" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="bJk-pR-0Bm"/>
+                            <constraint firstItem="5VD-Mi-Pln" firstAttribute="leading" secondItem="Lea-V8-oD8" secondAttribute="trailing" constant="12" id="cRS-zx-PEN"/>
+                            <constraint firstItem="Lea-V8-oD8" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="e1J-Tp-eIg"/>
                             <constraint firstAttribute="trailing" secondItem="doV-X3-MhO" secondAttribute="trailing" constant="20" id="gFb-ES-DaE"/>
                             <constraint firstItem="rhc-ee-nQZ" firstAttribute="leading" secondItem="rxo-jY-lmC" secondAttribute="trailing" constant="14" id="tM3-Kc-SIW"/>
                         </constraints>
