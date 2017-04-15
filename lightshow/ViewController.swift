@@ -203,7 +203,7 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         NSEvent.addLocalMonitorForEventsMatchingMask(.KeyDownMask) { (aEvent) -> NSEvent? in
             self.keyDown(aEvent)
             return aEvent
@@ -216,27 +216,11 @@ class ViewController: NSViewController {
         
 
         self.scrollView.documentView = self.audioPlotView
+        self.scrollView.wantsLayer = true
 
         let url = NSBundle.mainBundle().URLForResource("magnets", withExtension: "mp3")
         self.openFileWithFilePathURL(url!)
         
-        
-        
-//        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-//        self.scrollView.addConstraint(NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 20))
-//        
-//        self.scrollView.addConstraint(NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: 20))
-//        
-//        self.scrollView.addConstraint(NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 20))
-//        
-//        self.scrollView.addConstraint(NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 20))
-//        }
-//        self.scrollView.snp_makeConstraints { (make) -> Void in
-//            make.leading.equalTo(self.view)
-//            make.trailing.equalTo(self.view)
-//            make.top.equalTo(self.view).offset(100)
-//            make.bottom.equalTo(self.view)
-//        }
         
     }
     

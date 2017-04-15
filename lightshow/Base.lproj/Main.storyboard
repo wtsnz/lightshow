@@ -744,26 +744,6 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doV-X3-MhO">
-                                <rect key="frame" x="20" y="20" width="694" height="619"/>
-                                <clipView key="contentView" id="nrK-bf-4W2">
-                                    <rect key="frame" x="1" y="1" width="692" height="617"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4zz-0D-TPP">
-                                            <rect key="frame" x="141" y="65" width="115" height="109"/>
-                                        </view>
-                                    </subviews>
-                                </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="UoI-dW-esH">
-                                    <rect key="frame" x="1" y="602" width="692" height="16"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="x9E-vg-rQT">
-                                    <rect key="frame" x="678" y="1" width="15" height="617"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lea-V8-oD8">
                                 <rect key="frame" x="225" y="649" width="110" height="32"/>
                                 <buttonCell key="cell" type="push" title="Toggle Line" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tXA-oI-7IB">
@@ -784,6 +764,26 @@
                                     <action selector="deleteLastLineAction:" target="XfG-lQ-9wD" id="j1u-1a-t62"/>
                                 </connections>
                             </button>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doV-X3-MhO">
+                                <rect key="frame" x="20" y="20" width="694" height="619"/>
+                                <clipView key="contentView" id="nrK-bf-4W2">
+                                    <rect key="frame" x="1" y="1" width="692" height="617"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4zz-0D-TPP">
+                                            <rect key="frame" x="141" y="65" width="115" height="109"/>
+                                        </view>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="UoI-dW-esH">
+                                    <rect key="frame" x="1" y="602" width="692" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="x9E-vg-rQT">
+                                    <rect key="frame" x="678" y="1" width="15" height="617"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="rxo-jY-lmC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="17k-fT-Jdp"/>
